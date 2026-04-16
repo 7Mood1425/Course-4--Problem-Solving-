@@ -1,0 +1,40 @@
+#include<iostream>
+#include<string>
+using namespace std;
+ 
+enum enNumberType{Odd=1,Even=2};
+
+int ReadNumber() {
+	int number;
+	cout << "please enter a number :";
+	cin >> number;
+	return number;
+}
+
+enNumberType CheckNumberType(int num) {
+	int result = num % 2 ;
+	if (result == 0) {
+		return enNumberType::Even;
+	}
+	 else {
+		return enNumberType::Odd;
+	 }
+	
+}
+
+void PrintNumberType(enNumberType numberType) {
+
+	if (numberType == enNumberType::Even) {
+		cout << "\nNumber is Even\n";
+	}
+	else {
+		cout << "\nNumer is Odd\n";
+	}
+
+}
+
+int main() {
+	PrintNumberType(CheckNumberType(ReadNumber()));
+
+	return 0;
+}
