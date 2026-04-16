@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+int ReadNumber() {
+	int N;
+	cout << "Please enter a number : ";
+	cin >> N;
+	
+	return N;
+}
+
+int ReadPower() {
+	int M;
+	cout << "Please enter Power : ";
+	cin >> M;
+	return M;
+}
+
+int PowerOfM(int Number,int Power) {
+	if (Power == 0) {
+		return 1;
+	}
+	int Pow=pow(Number, Power);
+
+	return Pow;
+}
+int main() {
+	cout<< PowerOfM(ReadNumber(), ReadPower())<<endl;
+	return 0;
+}
+

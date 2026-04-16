@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+void ReadNumber(float& A, float& D) {
+	cout << "Please enter A : ";
+	cin >> A;
+	cout << "Please enter D : ";
+	cin >> D;
+	
+}
+
+int CalculateRectangleAreaBySideAndDiagonal(float A, float D) {
+	float Area= A * sqrt(pow(D, 2) - pow(A, 2));
+	return Area;
+}
+
+void PrintResult(float area) {
+	cout << "\nThe rectangle area is " << area << endl;
+}
+
+int main() {
+	float A, D;
+	ReadNumber (A, D);
+	PrintResult(CalculateRectangleAreaBySideAndDiagonal(A, D));
+
+	return 0;
+}
+

@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+enum enDaysOfWeek{Sat=1,Sun=2,Mon=3,Tue=4,Wed=5,Thu=6,Fri=7};
+
+int ReadNumberInRange(string massage, int from, int to) {
+	int	Number = 0;
+	do {
+		cout << massage ;
+		cin >> Number;
+	} while (Number < from || Number > to);
+	return Number;
+}
+
+enDaysOfWeek ReadDayofWeek() {
+	return (enDaysOfWeek)ReadNumberInRange("Please choose a number of day :\n[1]= Sat. \n[2]= Sun.\n[3]= Mon.\n[4]= Tue.\n[5]= Wed. \n[6]= Thu.\n[7]= Fri.\n", 1, 7);
+}
+	
+string Getdayofweek(enDaysOfWeek Day) {
+	switch (Day) {
+
+	case enDaysOfWeek::Sat:
+		return "Saturday";
+	case enDaysOfWeek::Sun:
+		return"Sunday";
+	case enDaysOfWeek::Mon:
+		return "Monday";
+	case enDaysOfWeek::Tue:
+		return"Tuesday";
+	case enDaysOfWeek::Wed:
+		return "Wedenday";
+	case enDaysOfWeek::Thu:
+		return "Thursday";
+	case enDaysOfWeek::Fri:
+		return "Friday";
+	}
+}
+
+int main() {
+	cout << Getdayofweek(ReadDayofWeek())<<endl;
+}
+
+

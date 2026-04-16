@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+int ReadNumber(string message) {
+	int number;
+	cout << message;
+	cin >> number;
+	return number;
+}
+
+int SumNumbers() {
+	int Number = 0;
+	int counter = 1;
+	int sum = 0;
+
+	do {
+		Number = ReadNumber("Please enter Number " + to_string(counter) +" : ");
+		if (Number == -99) {
+			break;
+		}sum += Number;
+		counter++;
+	} while (Number != -99);
+	return sum;
+}
+
+int main() {
+	cout << "Result = " << SumNumbers() << endl;
+	return 0;
+}
+
+

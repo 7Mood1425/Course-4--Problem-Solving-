@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+enum enPrimeOrnot{Prime=1, NotPrime=2};
+
+
+int ReadPositiveNumber(string message) {
+	int number = 0;
+	
+	do {
+		cout << message<<endl;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+
+}
+
+enPrimeOrnot CheckPrime(int number) {
+
+	int M = round(number / 2 );
+	for (int i = 2; i <= M; i++) {
+		if (number % i == 0)
+			return enPrimeOrnot::NotPrime;
+	}
+	return enPrimeOrnot::Prime;
+
+
+}
+
+void PrintNumberType(int number) {
+	switch (CheckPrime(number))
+	{
+	case enPrimeOrnot::Prime:
+		cout << "The number is prime \n";
+		break;
+
+	case enPrimeOrnot::NotPrime:
+		cout << "The number is not prime \n";
+		break;
+
+	}
+}
+
+int main(){
+
+	PrintNumberType(CheckPrime(ReadPositiveNumber("please enter a positive number : ")));
+
+
+
+	return 0;
+}
+
+

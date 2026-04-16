@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+struct strTaskDuration
+{
+	int NumOfHours, NumOfDays, NumOfMinutes, NumOfSecends;
+};
+
+float ReadPositiveNumber(string message) {
+	int number = 0;
+	do {
+		cout << message << endl;
+		cin >> number;
+	} while (number <= 0);
+	return number;
+}
+
+strTaskDuration ReadTaskDuation() {
+	strTaskDuration TaskDuration;
+ TaskDuration.NumOfDays = ReadPositiveNumber("Please enter Number Of Days :");;
+ TaskDuration.NumOfHours = ReadPositiveNumber("Please enter Number Of Hours :");
+ TaskDuration.NumOfMinutes =ReadPositiveNumber("Please enter Number Of mints :");
+ TaskDuration.NumOfSecends = ReadPositiveNumber("Please enter Number Of secends :");
+ return TaskDuration;
+}
+
+int TaskDuationInSecends(strTaskDuration TaskDuration) {
+	int DuationInSecends = 0;
+	DuationInSecends = TaskDuration.NumOfDays * 24 * 60 * 60;
+	DuationInSecends += TaskDuration.NumOfHours * 60 * 60;
+	DuationInSecends += TaskDuration.NumOfMinutes * 60;
+	DuationInSecends += TaskDuration.NumOfSecends;
+	return DuationInSecends;
+}
+
+int main() {
+	cout << "Total secends = " << TaskDuationInSecends(ReadTaskDuation());
+	
+	return 0;
+}
+
+

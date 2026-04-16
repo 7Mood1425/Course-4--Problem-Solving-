@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+
+int ReadPINCode() {
+	int PinCode;
+	cout << "Please enter PIN code : ";
+	cin >> PinCode;
+	return PinCode;
+}
+
+bool Login() {
+	int PinCode;
+
+	do {
+		PinCode = ReadPINCode();
+		if (PinCode == 12345) {
+			return 1;
+		}
+		else {
+			cout << "\nWrong PIN ";
+			system("color 4F");
+		}
+	} while (PinCode != 12345);
+}
+
+
+int main() {
+	if (Login()) {
+		system("color 2F");
+		cout << "Your account balance is " << 70000 << endl;
+	}
+
+	return 0;
+}
+
+

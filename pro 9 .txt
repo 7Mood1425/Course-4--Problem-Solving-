@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+ void ReadNumbers(int &Num1,int &Num2,int &Num3) {
+	cout << "please enter number 1 : ";
+	cin >> Num1;
+
+	cout << "please enter number 2 : ";
+	cin >>Num2;
+
+	cout << "please enter number 3 : ";
+	cin >>Num3;
+}
+
+int SumOfNumbers(int Num1, int Num2, int Num3) {
+	
+	return Num1 + Num2 + Num3;
+}
+
+ void PrintResult(int total) {
+	 cout << "\nThe total sum of numbers is : " << total << endl;
+ }
+
+int main() {
+	int Num1, Num2, Num3;
+	ReadNumbers(Num1, Num2, Num3);
+	PrintResult(SumOfNumbers(Num1, Num2, Num3));
+
+	return 0;
+}
+

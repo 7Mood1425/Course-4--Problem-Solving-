@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+
+int ReadPositiveNumber(string message) {
+	int number = 0;
+	
+	do {
+		cout << message<<endl;
+		cin >> number;
+
+	} while (number <= 0);
+
+	return number;
+
+}
+
+int CalculateReminder(float totalbill, float cashpaid) {
+	int Reminder = totalbill - cashpaid;
+	return Reminder;
+
+}
+
+int main(){
+
+	float TotalBill = ReadPositiveNumber("Please enter total bill :");
+	float totalcashPaid = ReadPositiveNumber("please enter total cash paid : ");
+
+	cout << endl << endl;
+	cout << "******************************\n\n";
+	cout << "Total Bill = " << TotalBill << endl<< endl;
+	
+	cout << "Cash paid = " << totalcashPaid << endl;
+
+	cout << "******************************\n";
+	cout << "Reminder = " << CalculateReminder(TotalBill, totalcashPaid);
+
+	return 0;
+}
+
+

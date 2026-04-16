@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+int ReadNumber() {
+	int N;
+	cout << "Please enter a number : ";
+	cin >> N;
+	return N;
+}
+
+void PowerOf2_3_4(int Number) {
+	int A, B, C;
+	A = Number * Number;
+	B = Number * Number * Number;
+	C = Number * Number * Number * Number;
+
+	cout << "A =" << A << " , " << " B = " << B << " , " << " C = " << C << endl;
+}
+int main() {
+	PowerOf2_3_4(ReadNumber());
+	return 0;
+}
+

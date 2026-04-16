@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+#include<string>
+int ReadForLOOPNum() {
+	int Num;
+	cout << "Please enter a number for loop : ";
+	cin >> Num;
+	return Num;
+}
+
+int ReadwhileLOOPNum() {
+	int Num;
+	cout << "Please enter a number while loop : ";
+	cin >> Num;
+	return Num;
+}
+
+int ReadDoLOOPNum() {
+	int Num;
+	cout << "Please enter a number do while loop : ";
+	cin >> Num;
+	return Num;
+}
+
+void ForLoop(int Num) {
+	
+	for (int i = 1; i <= Num; i++) {
+		cout << endl << i << endl;
+	}
+
+}
+
+void WhileLoop(int num) {
+	int i = 0;
+	while (i < num) {
+		i++;
+		cout << endl << i << endl;
+	}
+
+
+
+}
+
+void DoWhileLoop(int num) {
+	int i = 0;
+	do {
+		i++;
+		cout << endl << i << endl;
+	} while
+		(i < num);
+}
+int main() {
+
+	ForLoop(ReadForLOOPNum());
+	WhileLoop(ReadwhileLOOPNum());
+	DoWhileLoop(ReadDoLOOPNum());
+	return 0;
+}
+

@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+#include<string>
+enum enOperationType { Add = '+', subtract = '-', multiply = '*',Devide='/' };
+
+float ReadNumber(string massage) {
+	float number = 0;
+	cout << massage;
+	cin >> number;
+	return number;
+}
+
+enOperationType ReadOPType() {
+	char OT = '+';
+	cout << "Please enter operation type ( + , - , * , / ) :  ";
+	cin >>OT;
+	return (enOperationType)OT;
+}
+
+float Calculate(float Number1, float Number2, enOperationType OT) {
+
+	switch (OT)
+	{
+		case enOperationType::Add:
+			return Number1 + Number2;
+		case enOperationType::subtract:
+			return Number1 - Number2;
+		case enOperationType::multiply:
+			return Number1 * Number2;
+		case enOperationType::Devide:
+			return Number1 / Number2;
+	default:
+		return Number1 + Number2;
+	}
+}
+
+int main() {
+	
+	float Number1 = ReadNumber("Please enter number 1 : ");
+	float Number2 = ReadNumber("Please enter number 2 : ");
+	enOperationType OPtype = ReadOPType();
+	cout << endl << "Result = " << Calculate(Number1, Number2, OPtype) << endl;
+	
+	return 0;
+}
+

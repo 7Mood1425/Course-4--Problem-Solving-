@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+struct strTaskDuration
+{
+	int NumOfHours, NumOfDays, NumOfMinutes, NumOfSecends;
+};
+
+float ReadPositiveNumber(string message) {
+	int number = 0;
+	do {
+		cout << message << endl;
+		cin >> number;
+	} while (number <= 0);
+	return number;
+}
+
+strTaskDuration SecendToTaskDuation(int totalsecends) {
+	strTaskDuration TaskDuration;
+
+	const int SecendPerDay = 24 * 60 * 60;
+	const int SecendPerHour = 60 * 60;
+		const int SecendPerMinute = 60;
+		int reminder = 0;
+
+		TaskDuration.NumOfDays = floor(totalsecends / SecendPerDay);
+		reminder = totalsecends % SecendPerDay;
+		TaskDuration.NumOfHours = floor(totalsecends / SecendPerHour);
+		reminder = reminder % SecendPerHour;
+		TaskDuration.NumOfMinutes = floor(totalsecends / SecendPerMinute);
+		reminder = reminder % SecendPerDay;
+		  TaskDuration.NumOfSecends = reminder;
+		
+		return TaskDuration;
+}
+
+void PrintTaskDuation(strTaskDuration TaskDuration) {
+
+	cout << endl;
+	cout << TaskDuration.NumOfDays << " : ";
+	cout << TaskDuration.NumOfHours << " : ";
+	cout << TaskDuration.NumOfMinutes << " : ";
+	cout << TaskDuration.NumOfSecends << " \n ";
+
+}
+
+int main() {
+	int TotalSecends = ReadPositiveNumber("Please enter total secend ?");
+	PrintTaskDuation(SecendToTaskDuation(TotalSecends));
+	
+	return 0;
+}
+
+

@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+void ReadNumber(float& A, float& H) {
+	cout << "Please enter A : ";
+	cin >> A;
+	cout << "Please enter H : ";
+	cin >> H;
+}
+
+int CalculateCircleArea(float A, float H) {
+	const int PI=3.14;
+	float Area = (A / 2) * H;
+	return Area;
+}
+
+void PrintResult(float area) {
+	cout << "\nThe Circle area is " << area << endl;
+}
+
+int main() {
+	float A, H;
+	ReadNumber (A, H);
+	PrintResult(CalculateCircleArea(A, H));
+
+	return 0;
+}
+

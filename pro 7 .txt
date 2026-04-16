@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+int ReadNumber() {
+	int number;
+	cout << "Please enter a number : ";
+	cin >> number;
+	return number;
+}
+
+float CalculateNumber(int Num) {
+	return (float)Num/ 2;
+}
+
+void PrintResult(int Num) {
+	string result= " half of " + to_string(Num) + " is : " << to_string(CalculateNumber(Num));
+	cout << result;
+}
+int main() {
+	PrintResult(ReadNumber());
+
+	return 0;
+}
+
